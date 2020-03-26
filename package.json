@@ -7,9 +7,11 @@
   "private": false,
   "scripts": {
     "build": "Echo \"Done\"",
-    "bundle": "rm -rf .cache public && gatsby build",
+    "clear": "rm -rf .cache public",
+    "bundle": "yarn run clear && gatsby build",
     "docker:build": "./build_gatsby.sh",
-    "develop": "rm -rf .cache public && gatsby develop",
+    "develop": "yarn run clear && gatsby develop",
+    "debug": "yarn run clear && node --nolazy --inspect-brk ../../node_modules/gatsby/dist/bin/gatsby develop",
     "start": "npm run develop",
     "serve": "gatsby serve"
   },
